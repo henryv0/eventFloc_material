@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">eventFloc</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="next">Next</string>
+    <string name="update">Update</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="add">Add Event</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string-array name="tabs">
+        <item>EXPLORE</item>
+        <item>SOCIETIES</item>
+        <item>ENDING</item>
+        <item>NEWEST</item>
+    </string-array>
+</resources>
