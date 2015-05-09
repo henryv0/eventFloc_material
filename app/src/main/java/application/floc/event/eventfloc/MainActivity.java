@@ -2,20 +2,12 @@ package application.floc.event.eventfloc;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import application.floc.event.eventfloc.Tabs.SlidingTabLayout;
@@ -41,10 +33,20 @@ public class MainActivity extends ActionBarActivity {
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer,(DrawerLayout)findViewById(R.id.drawer_layout), mToolbar);
 
-        mPager = (ViewPager) findViewById(R.id.pager);
-        mPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        // mPager = (ViewPager) findViewById(R.id.pager);
+        // mPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
-        mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        // mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
+
+        // Get the ViewPager and set it's PagerAdapter so that it can display items
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(new TabFragmentPagerAdapter(getSupportFragmentManager(),
+                MainActivity.this));
+
+        // Give the SlidingTabLayout the ViewPager
+        SlidingTabLayout mTabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        // Center the tabs in the layout
+        mTabs.setDistributeEvenly(true);
 
         //mTabs.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
         //mTabs.setDistributeEvenly(true);
@@ -57,8 +59,9 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        mTabs.setViewPager(mPager);
+        mTabs.setViewPager(viewPager);
 
+        // mTabs.setViewPager(mPager);
 
     }
 
@@ -89,57 +92,5 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    class MyPagerAdapter extends FragmentPagerAdapter {
-
-        String[] tabs;
-        String[] tabText = getResources().getStringArray(R.array.tabs);
-
-        public MyPagerAdapter(FragmentManager fm) {
-            super(fm);
-            tabs = getResources().getStringArray(R.array.tabs);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            MyFragment myFragment = MyFragment.getInstance(position);
-            return myFragment;
-        }
-
-        public CharSequence getPageTitle(int position) {
-            return tabText[position];
-        }
-
-        @Override
-        public int getCount() {
-            return 4;
-        }
-    }
-
-    public static class MyFragment extends Fragment {
-        private TextView textView;
-
-        public static MyFragment getInstance(int position) {
-            MyFragment myFragment = new MyFragment();
-            Bundle args = new Bundle();
-            args.putInt("position",position);
-            myFragment.setArguments(args);
-            return myFragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            View layout = inflater.inflate(R.layout.fragment_explore, container, false);
-
-            textView = (TextView) layout.findViewById(R.id.position);
-            Bundle bundle = getArguments();
-
-            if (bundle != null) {
-                textView.setText("ThePage Selected is "+bundle.getInt("position"));
-            }
-
-            return layout;
-        }
     }
 }
