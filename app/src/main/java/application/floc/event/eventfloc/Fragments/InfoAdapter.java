@@ -1,4 +1,4 @@
-package application.floc.event.eventfloc;
+package application.floc.event.eventfloc.Fragments;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import java.util.Collections;
 import java.util.List;
+
+import application.floc.event.eventfloc.R;
 
 /**
  * Created by henryvo on 9/05/15.

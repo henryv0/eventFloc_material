@@ -1,4 +1,4 @@
-package application.floc.event.eventfloc;
+package application.floc.event.eventfloc.Fragments;
 
 
 import android.content.Context;
@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import application.floc.event.eventfloc.R;
 
 
 /**

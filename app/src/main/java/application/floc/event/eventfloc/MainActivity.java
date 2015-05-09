@@ -10,6 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import application.floc.event.eventfloc.Activities.AddActivity;
+import application.floc.event.eventfloc.Fragments.NavigationDrawerFragment;
+import application.floc.event.eventfloc.Fragments.TabFragmentPagerAdapter;
 import application.floc.event.eventfloc.Tabs.SlidingTabLayout;
 
 

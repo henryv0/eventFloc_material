@@ -1,4 +1,4 @@
-package application.floc.event.eventfloc;
+package application.floc.event.eventfloc.Fragments;
 
 /**
  * Created by henryvo on 9/05/15.

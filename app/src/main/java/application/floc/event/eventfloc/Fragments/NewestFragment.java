@@ -1,4 +1,4 @@
-package application.floc.event.eventfloc;
+package application.floc.event.eventfloc.Fragments;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import application.floc.event.eventfloc.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EndingFragment extends android.support.v4.app.Fragment {
+public class NewestFragment extends android.support.v4.app.Fragment {
 
 
-    public EndingFragment() {
+    public NewestFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class EndingFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ending, container, false);
+        return inflater.inflate(R.layout.fragment_newest, container, false);
     }
 
 

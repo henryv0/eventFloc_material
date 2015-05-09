@@ -1,4 +1,4 @@
-package application.floc.event.eventfloc;
+package application.floc.event.eventfloc.Activities;
 
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
+
+import application.floc.event.eventfloc.R;
 
 
 public class AddActivity extends ActionBarActivity {

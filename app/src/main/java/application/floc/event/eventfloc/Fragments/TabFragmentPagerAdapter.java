@@ -1,4 +1,4 @@
-package application.floc.event.eventfloc;
+package application.floc.event.eventfloc.Fragments;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
