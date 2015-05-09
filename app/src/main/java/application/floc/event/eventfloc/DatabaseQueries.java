@@ -124,21 +124,21 @@ public class DatabaseQueries extends SQLiteOpenHelper {
     private static final String HAS_EVENT_TYPE_ID = "event_type_id";
 
 
-    private static final String CREATE_TABLE_USER = "create table if not exists" + TABLE_USER + " ("
+    private static final String CREATE_TABLE_USER = "create table if not exists " + TABLE_USER + " ("
             + USER_ID + " INTEGER PRIMARY KEY ASC, "
             + USER_EMAIL + " varchar2 NOT NULL, "
             + USER_PASSWORD + " varchar2 NOT NULL, "
             + USER_TYPE + " integer(1) NOT NULL );";
 
 
-    private static final String CREATE_TABLE_STUDENT = "create table if not exists" + TABLE_STUDENT + " ("
+    private static final String CREATE_TABLE_STUDENT = "create table if not exists " + TABLE_STUDENT + " ("
             + STUDENT_ID + " INTEGER PRIMARY KEY ASC, "
             + STUDENT_USER_ID + " integer references " + TABLE_USER + "(user_id) NOT NULL, "
             + STUDENT_FIRSTNAME + " varchar2(20) NOT NULL, "
             + STUDENT_LASTNAME + " varchar2(20) NOT NULL );";
 
 
-    private static final String CREATE_TABLE_SOCIETY = "create table if not exists" + TABLE_SOCIETY + " ("
+    private static final String CREATE_TABLE_SOCIETY = "create table if not exists " + TABLE_SOCIETY + " ("
             + SOCIETY_ID + " INTEGER PRIMARY KEY ASC, "
             + SOCIETY_USER_ID + " integer(7) references " + TABLE_USER + "(user_id), "
             + SOCIETY_NAME + " varchar2(50) NOT NULL, "
@@ -147,11 +147,11 @@ public class DatabaseQueries extends SQLiteOpenHelper {
             + SOCIETY_FACULTY + " varchar2(25));";
 
 
-    private static final String CREATE_TABLE_ADMIN = "create table if not exists" + TABLE_ADMIN + " ( "
+    private static final String CREATE_TABLE_ADMIN = "create table if not exists " + TABLE_ADMIN + " ( "
             + ADMIN_ID + " INTEGER PRIMARY KEY ASC, "
             + ADMIN_USER_ID + " integer(7) references " + TABLE_USER + "(user_id)); ";
 
-    private static final String CREATE_TABLE_EVENT = "create table if not exists" + TABLE_EVENT + " ( "
+    private static final String CREATE_TABLE_EVENT = "create table if not exists " + TABLE_EVENT + " ( "
             + EVENT_ID + " INTEGER PRIMARY KEY ASC, "
             + EVENT_NAME + " varchar2,"
             + EVENT_SOCIETY_ID + " integer(7) references " + TABLE_SOCIETY + "(society_id),"
@@ -162,24 +162,24 @@ public class DatabaseQueries extends SQLiteOpenHelper {
             + EVENT_START_TIME + " integer,"
             + EVENT_END_TIME + " integer);";
 
-    private static final String CREATE_TABLE_EVENT_TYPE = "create table if not exists" + TABLE_EVENT_TYPE + " ( "
+    private static final String CREATE_TABLE_EVENT_TYPE = "create table if not exists " + TABLE_EVENT_TYPE + " ( "
             + EVENT_TYPE_ID + " INTEGER PRIMARY KEY ASC, "
             + EVENT_TYPE + " varchar2);";
 
-    private static final String CREATE_TABLE_FOLLOW_SOCIETY = "create table if not exists" + TABLE_FOLLOW_SOCIETY + " ( "
+    private static final String CREATE_TABLE_FOLLOW_SOCIETY = "create table if not exists " + TABLE_FOLLOW_SOCIETY + " ( "
             + FOLLOW_STUDENT_ID + " integer(7) references " + TABLE_STUDENT + "(student_id), "
             + FOLLOW_SOCIETY_ID + " integer(7) references " + TABLE_SOCIETY + "(society_id)); ";
 
-    private static final String CREATE_TABLE_HAS_CATEGORY = "create table if not exists" + TABLE_HAS_CATEGORY + " ( "
+    private static final String CREATE_TABLE_HAS_CATEGORY = "create table if not exists " + TABLE_HAS_CATEGORY + " ( "
             + HAS_EVENT_ID + " integer(7) references " + TABLE_EVENT + "(event_id), "
             + HAS_EVENT_TYPE_ID + " integer(7) references " + TABLE_EVENT_TYPE + "(event_type_id)); ";
 
-    private static final String CREATE_TABLE_ATTENDS = "create table if not exists" + TABLE_ATTENDS + " ( "
+    private static final String CREATE_TABLE_ATTENDS = "create table if not exists " + TABLE_ATTENDS + " ( "
             + ATTEND_EVENT_ID + " integer(7) references " + TABLE_EVENT + "(event_id), "
             + ATTEND_STUDENT_ID + " integer(7) references " + TABLE_STUDENT + "(student_id),"
             + ATTEND_STATUS + " varchar2);";
 
-    private static final String CREATE_TABLE_COMMENT = "create table if not exists" + TABLE_COMMENT + " ( "
+    private static final String CREATE_TABLE_COMMENT = "create table if not exists " + TABLE_COMMENT + " ( "
             + COMMENT_ID + " INTEGER PRIMARY KEY ASC, "
             + COMMENT_USER_ID + " integer(7) references " + TABLE_USER + "(user_id), "
             + COMMENT_EVENT_ID + " integer (7) references " + TABLE_EVENT + "(event_id), "

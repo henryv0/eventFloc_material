@@ -12,6 +12,8 @@
             android:label="@string/home">
 
 
+
+
         </activity>
         <activity
             android:name=".Activities.AddActivity"

@@ -15,6 +15,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
 import application.floc.event.eventfloc.DatabaseQueries;
+import application.floc.event.eventfloc.MainActivity;
 import application.floc.event.eventfloc.R;
 
 /**
@@ -61,6 +62,7 @@ public class LoginActivity extends ActionBarActivity {
                     if(successfulLogin){
                         Log.d("LOGIN STATUS", "Successful login");
                         loginToast(true);
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }
                     else {
                         Log.d("LOGIN STATUS", "Unsuccessful login");
