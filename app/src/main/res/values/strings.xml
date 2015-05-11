@@ -31,4 +31,7 @@
         <item>ENDING</item>
         <item>NEWEST</item>
     </string-array>
+    <string name="title_activity_my_events">MyEventsActivity</string>
+    <string name="my_events">My Events</string>
+    <string name="refresh">Refresh</string>
 </resources>
