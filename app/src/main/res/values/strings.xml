@@ -31,6 +31,23 @@
         <item>ENDING</item>
         <item>NEWEST</item>
     </string-array>
+
+    <string-array name="categories">
+        <item>Careers</item>
+        <item>Faculty</item>
+        <item>Interests</item>
+        <item>Cultural</item>
+        <item>Food</item>
+        <item>Free Food</item>
+        <item>Sports</item>
+        <item>Fundraisers</item>
+        <item>Learning</item>
+        <item>Festivals</item>
+        <item>Performing Arts</item>
+        <item>Political</item>
+
+    </string-array>
+
     <string name="title_activity_my_events">MyEventsActivity</string>
     <string name="my_events">My Events</string>
     <string name="refresh">Refresh</string>
